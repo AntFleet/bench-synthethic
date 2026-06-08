@@ -1,0 +1,37 @@
+{
+  "name": "synthetic-users-v4",
+  "version": "1.2.0",
+  "private": false,
+  "type": "module",
+  "description": "Synthetic Users \u2014 source-backed synthetic decision room for product, launch, X, and Base token reads.",
+  "scripts": {
+    "test": "node --test --test-concurrency=1 tests/*.test.mjs",
+    "test:fast": "node scripts/run-fast-tests.mjs",
+    "test:agent-surface": "node scripts/run-agent-surface-tests.mjs",
+    "test:predeploy": "node scripts/verify-staging-predeploy.mjs",
+    "start": "node scripts/server.mjs",
+    "analyze": "node scripts/su-cli.mjs",
+    "browser:install": "playwright install chromium",
+    "test:agent-surface:fast": "node scripts/run-agent-surface-fast-tests.mjs",
+    "test:agent-surface:slow": "node scripts/run-slow-tests.mjs",
+    "test:agent-surface:slow:shard": "TEST_SHARD=${TEST_SHARD:-1/2} node scripts/run-slow-tests.mjs"
+  },
+  "bin": {
+    "synthetic-users": "scripts/su-cli.mjs"
+  },
+  "dependencies": {
+    "@axe-core/playwright": "^4.11.3",
+    "@privy-io/node": "^0.19.0",
+    "@privy-io/react-auth": "^3.28.0",
+    "@x402/evm": "^2.14.0",
+    "@x402/fetch": "^2.14.0",
+    "mammoth": "^1.12.0",
+    "pdf-parse": "^2.4.5",
+    "playwright": "^1.60.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "sharp": "^0.34.5",
+    "viem": "^2.51.3"
+  },
+  "license": "MIT"
+}
